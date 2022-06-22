@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style >
+        .container{
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <h1 style="color: white; text-align: center; margin-top: 50px;",><span style="color: red;">COVID-19</span> WORLDWIDE DATA</h1>
+
+    <form method="post" action="" style="text-align: center; margin: 80px 0px;">
+        {% csrf_token %}
+        <select name="selectedcountry">
+            {% for country in mylist %}
+            <option>{{country}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" name="submit">
+    </form>
+    
+    <h1 style="color: white; text-align:center; margin-top: 150px;">{{selectedcountry}}</h1>
+<div class="d-flex justify-content-center align-items-center">
+    <div class="container" style="border-radius: 10px; height: 100px; width: 200px; background-color: rgb(10, 210, 224)">
+        <h1>{{total}}</h1>
+        <p1>total cases</p1>
+    </div>
+    <div class="container" style="border-radius: 10px; height: 100px; width: 200px; background-color: rgb(26, 190, 26)">
+        <h1>{{recovered}}</h1>
+        <p1>recovered cases</p1>
+    </div>
+    <div class="container" style="border-radius: 10px; height: 100px; width: 200px; background-color: plum">
+        <h1>{{new}}</h1>
+        <p1>new cases</p1>
+    </div>
+</div>
+<div class="d-flex justify-content-center align-items-center">
+    <div class="container" style="border-radius: 10px; height: 100px; width: 200px; background-color: red">
+        <h1>{{deaths}}</h1>
+        <p1>total deaths</p1>
+    </div>
+    <div class="container" style="border-radius: 10px; height: 100px; width: 200px; background-color: rgb(233, 125, 24)">
+        <h1>{{critical}}</h1>
+        <p1>critical cases</p1>
+    </div>
+    <div class="container" style="border-radius: 10px; height: 100px; width: 200px; background-color: rgb(224, 220, 10)">
+        <h1>{{active}}</h1>
+        <p1>active cases</p1>
+    </div>
+</div>
+<p style="text-align: center; margin-top: 100px; color: rgb(139, 130, 130);">
+    Developed by <span style="color: rgb(177, 62, 177);"> Kunal </span>
+</p>
+    
+</body>
+</html>
